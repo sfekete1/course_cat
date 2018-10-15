@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CourseCat</title>
+    <title>Course Catalog</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,10 @@
   </head>
 
   <body>
+    <h1>Course Catalog</h1>
+    <p><a href="/instructors#index">Instructors</a></p>
+    <p><a href="/courses#index">Courses</a></p>
+    <p><a href="/subjects#index">Subjects</a></p>
     <%= yield %>
   </body>
 </html>

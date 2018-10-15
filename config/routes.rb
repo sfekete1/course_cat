@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :courses
+  resources :subjects
+  resources :instructors
   get 'static_pages/home'
 
   get 'static_pages/courses'
@@ -7,7 +10,7 @@ Rails.application.routes.draw do
 
   get 'static_pages/instructors'
 
-  root 'static_pages#home'
+  root 'application#home'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
