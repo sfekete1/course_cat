@@ -10,9 +10,17 @@
 
   <body>
     <h1>Course Catalog</h1>
-    <p><a href="/instructors#index">Instructors</a></p>
-    <p><a href="/courses#index">Courses</a></p>
-    <p><a href="/subjects#index">Subjects</a></p>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link" href="/instructors#index">Instructors</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/courses#index">Courses</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/subjects#index">Subjects</a></p>
+      </li>
+    </ul>
     <%= yield %>
   </body>
 </html>
