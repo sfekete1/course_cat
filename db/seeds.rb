@@ -7,11 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #create array of hashes and add the key values to my db 
-
-[[Course, "public/course.json"],[Instructor, "public/subject.json"],[Subject, "public/instructor.json"]].each do |curr|{
-    parse = JSON.parse(File.read(curr[1])); 0
-    curr[0].import curr[1], validate:false
-}
+courseParse = JSON.parse(File.read("public/course.json")); 0
+subjectParse = JSON.parse(File.read("public/subject.json")); 0
+instructorParse = JSON.parse(File.read("public/instructor.json")); 0
+courseParse.each {|line| line['identifier']= line.delete('id')}
+subjectParse.each {|line| line['identifier']= line.delete('id')}
+instructorParse.each {|line| line['identifier']= line.delete('id')}
+Course.import courseParse, validate:false
+Instructor.import instructorParse, validate:false
+Subject.import subjectParse, validate:false
 
 
 
