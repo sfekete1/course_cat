@@ -4,13 +4,13 @@ Rails.application.routes.draw do
   resources :instructors
   get 'static_pages/home'
 
-  get 'static_pages/courses'
+  get 'courses#index'
 
-  get 'static_pages/subjects'
+  get 'subjects#index'
 
-  get 'static_pages/instructors'
+  get 'instructors#index'
 
-  root 'application#home'
+  root 'static_pages#home'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
