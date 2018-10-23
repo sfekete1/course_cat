@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181014234132) do
+ActiveRecord::Schema.define(version: 20181023170242) do
 
   create_table "courses", force: :cascade do |t|
     t.integer "identifier"
@@ -48,6 +48,14 @@ ActiveRecord::Schema.define(version: 20181014234132) do
     t.string "segments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end
