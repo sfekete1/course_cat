@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  get 'users/new'
-
   resources :courses
   resources :subjects
   resources :instructors
+  resources :users
+
+ 
   #There are future implementation aspects to put in these as well as path listings (listing 5.43)
   #get 'static_pages/home'
 
@@ -12,8 +13,8 @@ Rails.application.routes.draw do
   #get 'subjects#index'
 
   #get 'instructors#index'
-
-  #get  '/signup',  to: 'users#new'
+  #get 'users/new'
+  get  '/signup',  to: 'users#new'
 
   root 'static_pages#home'
 
