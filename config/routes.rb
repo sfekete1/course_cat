@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   resources :courses
   resources :subjects
   resources :instructors
@@ -14,6 +16,10 @@ Rails.application.routes.draw do
 
   #get 'instructors#index'
   #get 'users/new'
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+  
   get  '/signup',  to: 'users#new'
 
   root 'static_pages#home'
