@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+
+
+  resources :enrollments
   resources :courses
   resources :instructors
   resources :subjects
@@ -12,12 +15,17 @@ Rails.application.routes.draw do
   get   '/courses', to: 'courses#index'
   get   '/subjects', to: 'subjects#index'
   get   '/instuctors', to: 'instructors#index'
-  ######
+
+  ###### search
   get   '/search', to: 'static_pages#search'
+  get   '/course_search', to: 'courses#search'
 
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+
+  get '/enrollment', to: 'enrollments#show'
+
   
   get 'sessions/new'
 
