@@ -1,0 +1,31 @@
+<div class="center jumbotron">
+    <h1>Course Search</h1>
+    <%= form_tag("/search", method: "get") do %>
+        <%= text_field_tag :name, params[:name] %>
+        <%= select_tag(:subject_id, options_from_collection_for_select(Subject.all, "subject_id", "name", params[:name]), include_blank: "None", class: "custom-select") %>
+        <%= submit_tag 'Search' %>
+    <% end %>
+</div> 
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Code</th>
+            <th>Description</th>
+            <th>Enroll</th>
+            <th colspan="3"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @courses.each do |course| %>
+            <tr>
+            <td><%= course.name %></td>
+            <td><%= course.code %></td>
+            <td><%= course.description %></td>
+            <td><%= button_to "Enroll", controller: "enrollments", params: {enrollment: {course_code: course.code, user_id: current_user.id}} %></td>
+            </tr>
+        <% end %>
+        </tbody>
+    </table>
+</div>
