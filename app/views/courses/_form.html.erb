@@ -12,18 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :identifier %>
-    <%= form.number_field :identifier, id: :course_identifier %>
-  </div>
-
-  <div class="field">
-    <%= form.label :comment %>
-    <%= form.text_field :comment, id: :course_comment %>
-  </div>
-
-  <div class="field">
-    <%= form.label :term %>
-    <%= form.text_field :term, id: :course_term %>
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :course_name %>
   </div>
 
   <div class="field">
@@ -32,38 +22,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :continuity_id %>
-    <%= form.text_field :continuity_id, id: :course_continuity_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :course_name %>
-  </div>
-
-  <div class="field">
     <%= form.label :description %>
-    <%= form.text_field :description, id: :course_description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :credits %>
-    <%= form.text_field :credits, id: :course_credits %>
-  </div>
-
-  <div class="field">
-    <%= form.label :independent_study %>
-    <%= form.check_box :independent_study, id: :course_independent_study %>
-  </div>
-
-  <div class="field">
-    <%= form.label :requirements %>
-    <%= form.text_field :requirements, id: :course_requirements %>
-  </div>
-
-  <div class="field">
-    <%= form.label :subjects %>
-    <%= form.text_field :subjects, id: :course_subjects %>
+    <%= form.text_area :description, id: :course_description %>
   </div>
 
   <div class="actions">

@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
   resources :courses
-  resources :subjects
   resources :instructors
+  resources :subjects
   resources :users
 
  
@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get   '/courses', to: 'courses#index'
   get   '/subjects', to: 'subjects#index'
   get   '/instuctors', to: 'instructors#index'
+  ######
+  get   '/search', to: 'static_pages#search'
 
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'

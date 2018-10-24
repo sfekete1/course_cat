@@ -1,16 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  identifier: 1
-  comment: MyString
+  instructor_id: 1
   email: MyString
   first: MyString
   middle: MyString
   last: MyString
 
 two:
-  identifier: 1
-  comment: MyString
+  instructor_id: 1
   email: MyString
   first: MyString
   middle: MyString

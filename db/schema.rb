@@ -10,27 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181023172423) do
+ActiveRecord::Schema.define(version: 20181024053437) do
+
+  create_table "course_subjects", force: :cascade do |t|
+    t.string "course_code"
+    t.string "subject_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "courses", force: :cascade do |t|
-    t.integer "identifier"
-    t.string "comment"
-    t.string "term"
-    t.string "code"
-    t.string "continuity_id"
     t.string "name"
-    t.string "description"
-    t.float "credits"
-    t.boolean "independent_study"
-    t.string "requirements"
-    t.string "subjects"
+    t.string "code"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "enrollments", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "course_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "instructors", force: :cascade do |t|
-    t.integer "identifier"
-    t.string "comment"
+    t.integer "instructor_id"
     t.string "email"
     t.string "first"
     t.string "middle"
@@ -40,12 +45,9 @@ ActiveRecord::Schema.define(version: 20181023172423) do
   end
 
   create_table "subjects", force: :cascade do |t|
-    t.integer "identifier"
-    t.string "comment"
-    t.string "term"
+    t.string "subject_id"
     t.string "name"
     t.string "abbreviation"
-    t.string "segments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

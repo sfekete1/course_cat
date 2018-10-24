@@ -10,4 +10,7 @@ class StaticPagesController < ApplicationController
 
   def instructors
   end
+
+  def search
+  end
 end

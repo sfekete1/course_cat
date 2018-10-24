@@ -7,16 +7,47 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #create array of hashes and add the key values to my db 
-courseParse = JSON.parse(File.read("public/course.json")); 0
-subjectParse = JSON.parse(File.read("public/subject.json")); 0
-instructorParse = JSON.parse(File.read("public/instructor.json")); 0
-courseParse.each {|line| line['identifier']= line.delete('id')}
-subjectParse.each {|line| line['identifier']= line.delete('id')}
-instructorParse.each {|line| line['identifier']= line.delete('id')}
-Course.import courseParse, validate:false
-Instructor.import instructorParse, validate:false
-Subject.import subjectParse, validate:false
+parsed = JSON.parse(File.read("public/course.json")); 0
+courses = []
+courseSubjects = []
+parsed.each do |course|
+    courses << {
+        name: course["name"],
+        code: course["code"],
+        description: course["description"]
+    }
+    course["subjects"].each do |subject|
+        courseSubjects << {
+            course_code: course["code"],
+            subject_id: subject["id"]
+        }
+    end
+end
+
+parsed = JSON.parse(File.read("public/subject.json")); 0
+subjects= []
+parsed.each do |subject|
+    subjects << {
+        name: subject["name"],
+        abbreviation: subject["abbreviation"],
+        subject_id: subject["id"]
+    }
+end
+
+parsed = JSON.parse(File.read("public/instructor.json")); 0
+instructors = []
+parsed.each do |instructor|
+    instructors << {
+        instructor_id: instructor["id"],
+        first: instructor["first"],
+        middle: instructor["middle"],
+        last: instructor["last"],
+        email: instructor["email"]
+    }      
+end
 
 
-
-#next populate all the other databases for subject and instructor
+Course.import courses
+Instructor.import instructors
+Subject.import subjects
+CourseSubject.import courseSubjects

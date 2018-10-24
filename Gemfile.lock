@@ -71,6 +71,7 @@ GEM
     ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    hirb (0.7.3)
     i18n (1.1.1)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -187,11 +188,13 @@ DEPENDENCIES
   bootstrap-sass (= 3.3.7)
   byebug (= 9.0.6)
   coffee-rails (= 4.2.2)
+  hirb
   jbuilder (= 2.7.0)
   jquery-rails (= 4.3.1)
   json
   listen (= 3.1.5)
   pg (= 0.20.0)
+  pry
   pry-rails
   puma (= 3.9.1)
   rails (= 5.1.6)
