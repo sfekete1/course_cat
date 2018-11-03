@@ -16,6 +16,7 @@ gem 'jbuilder',     '2.7.0'
 gem 'rails-controller-testing'
 gem 'hirb'
 gem 'pry'
+gem 'pg_search'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'

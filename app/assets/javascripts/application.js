@@ -13,5 +13,16 @@
 //= require jquery3
 //= require bootstrap
 //= require rails-ujs
+//= require turbolinks
 //= require_tree .
 //= require_self
+
+$(document).on('turbolinks:load', function() {
+    $('#subject_id').change(function() {
+       $.get($("#search-form").attr("action"), $("#search-form").serialize(), null, "script");
+    });
+
+    $('#name').keyup(function() {
+       $.get($("#search-form").attr("action"), $("#search-form").serialize(), null, "script");
+    });
+});
